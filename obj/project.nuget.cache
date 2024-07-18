@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "oi3zemK/95copsbeE+FAwm4PlbEu1GYzMWJ/FLVjA/8y3k06//Yp+2jHSxtCQrpzTLM/jyJWsTxOtZxvvYVDWw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\user\\pythonFiles\\KycApp\\KycApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.32\\microsoft.netcore.app.host.win-x64.3.1.32.nupkg.sha512"
+  ],
+  "logs": []
+}
