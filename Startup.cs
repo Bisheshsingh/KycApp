@@ -2,6 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using KycApp.Interfaces;
+using KycApp.Repositories;
+using KycApp.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -25,6 +28,11 @@ namespace KycApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IAdminService, AdminService>();
+            services.AddScoped<ICustomerService, CustomerService>();
+            services.AddScoped<UserRepository, UserRepository>();
+            services.AddScoped<KycRepository, KycRepository>();
+            
             services.AddControllers();
         }
 

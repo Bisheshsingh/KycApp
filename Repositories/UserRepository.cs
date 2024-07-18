@@ -16,6 +16,11 @@ namespace KycApp.Repositories
         {
             throw new System.NotImplementedException();
         }
+        
+        public Task<User> GetByEmail(string email)
+        {
+            throw new System.NotImplementedException();
+        }
 
         public Task Add(User entity)
         {
