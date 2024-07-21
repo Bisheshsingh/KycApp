@@ -1,40 +1,64 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using KycApp.Data;
 using KycApp.Interfaces;
 using KycApp.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace KycApp.Repositories
 {
     public class UserRepository : IRepository<User>
     {
-        public Task<IEnumerable<User>> GetAll()
+        private readonly ApplicationDbContext _dbContext;
+
+        public UserRepository(ApplicationDbContext dbContext)
         {
-            throw new System.NotImplementedException();
+            _dbContext = dbContext;
         }
 
-        public Task<User> GetById(int id)
+        public async Task<IEnumerable<User>> GetAll()
         {
-            throw new System.NotImplementedException();
-        }
-        
-        public Task<User> GetByEmail(string email)
-        {
-            throw new System.NotImplementedException();
+            return await _dbContext.Users.ToListAsync();
         }
 
-        public Task Add(User entity)
+        public async Task<User> GetById(int id)
         {
-            throw new System.NotImplementedException();
+            return await _dbContext.Users
+                .FirstOrDefaultAsync(u => u.Id == id);
         }
 
-        public Task Update(User entity)
+        public async Task<User> GetByEmail(string email)
         {
-            throw new System.NotImplementedException();
+            return await _dbContext.Users
+                .FirstOrDefaultAsync(u => u.EmailId == email);
         }
 
-        public Task Delete(int id)
+        public async Task Add(User entity)
         {
-            throw new System.NotImplementedException();
+            await _dbContext.Users.AddAsync(entity);
+            await _dbContext.SaveChangesAsync();
+        }
+
+        public async Task Update(User entity)
+        {
+            var existingEntity = await _dbContext.Users
+                .FirstOrDefaultAsync(u => u.Id == entity.Id);
+            if (existingEntity != null)
+            {
+                _dbContext.Entry(existingEntity).CurrentValues.SetValues(entity);
+                await _dbContext.SaveChangesAsync();
+            }
+        }
+
+        public async Task Delete(int id)
+        {
+            var entity = await _dbContext.Users
+                .FirstOrDefaultAsync(u => u.Id == id);
+            if (entity != null)
+            {
+                _dbContext.Users.Remove(entity);
+                await _dbContext.SaveChangesAsync();
+            }
         }
     }
 }

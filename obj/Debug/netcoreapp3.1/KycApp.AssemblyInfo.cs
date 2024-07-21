@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KycApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+70935311d996bc4c6d755ca20ee428904396131b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ee614c7ec17cf5a99edc312d81929d0b88c40687")]
 [assembly: System.Reflection.AssemblyProductAttribute("KycApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KycApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
